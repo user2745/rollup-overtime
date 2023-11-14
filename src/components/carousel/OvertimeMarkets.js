@@ -13,7 +13,10 @@ function OvertimeMarkets() {
         <BaseOverTimeMarketsItem />
         <Carousel.Caption>
           <h3>
-            <a href="https://base.org">Base</a> Overtime Markets
+            <a href="https://base.org" className="link">
+              Base
+            </a>{' '}
+            Overtime Markets
           </h3>
           <Button
             variant="outline-dark"
@@ -28,7 +31,10 @@ function OvertimeMarkets() {
         <OptimismOverTimeMarketsItem />
         <Carousel.Caption>
           <h3>
-            <a href="http://optimism.io/">Optimism</a> Overtime Markets
+            <a href="http://optimism.io/" className="link">
+              Optimism
+            </a>{' '}
+            Overtime Markets
           </h3>
           <Button
             variant="outline-dark"
@@ -43,7 +49,10 @@ function OvertimeMarkets() {
         <ArbitriumOverTimeMarketsItem />
         <Carousel.Caption>
           <h3>
-            <a href="http://arbitrum.io">Arbitrium</a> Overtime Markets
+            <a href="http://arbitrum.io" className="link">
+              Arbitrium
+            </a>{' '}
+            Overtime Markets
           </h3>
           <Button
             variant="outline-dark"
