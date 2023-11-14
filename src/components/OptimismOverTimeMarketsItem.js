@@ -33,6 +33,14 @@ function OptimismOverTimeMarketsItem() {
 
   if (loading) return <Spinner animation="border" role="status"></Spinner>
 
+  if (error) {
+    return (
+      <div style={{ color: 'red', textAlign: 'center' }}>
+        Error: Failed to Load Markets
+      </div>
+    )
+  }
+
   return (
     <Card style={{ height: '500px' }}>
       <Card.Header>Overtime Markets on Optimism</Card.Header>
