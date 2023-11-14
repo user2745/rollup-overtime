@@ -40,20 +40,18 @@ function BaseOverTimeMarketsItem() {
       <Card.Header>Overtime Markets on Base</Card.Header>
       <Card.Body>
         <Card.Title>
-          <h2 style={{ textAlign: 'center', color: 'white' }}>
+          <h2 style={{ textAlign: 'center', color: 'black' }}>
             Base Markets available now on Overtime
           </h2>
         </Card.Title>
         <Row>
           <Col>
-            <Card border="light" style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }}>
               <Card.Header>{data[0].sport} Markets</Card.Header>
               <Card.Body>
-                <Card.Title>
-                {data[0].name}
-                </Card.Title>
+                <Card.Title>{data[0].name}</Card.Title>
                 <Card.Text>
-                Take a {data[0].supportedTypes[0]} on {data[4].name} now! Only
+                  Take a {data[0].supportedTypes[0]} on {data[4].name} now! Only
                   on OverTime Markets
                 </Card.Text>
               </Card.Body>
