@@ -37,7 +37,7 @@ function ArbitriumOverTimeMarketsItem() {
 
   return (
     <Card style={{ height: '500px' }}>
-      <Card.Header>Overtime Markets on Optimism</Card.Header>
+      <Card.Header>Overtime Markets on Arbitrium</Card.Header>
       <Card.Body>
         <Card.Title>
           <h2 style={{ textAlign: 'center', color: 'white' }}>
