@@ -36,7 +36,7 @@ function BaseOverTimeMarketsItem() {
   if (error) return ErrorMessage()
 
   return (
-    <Card style={{ height: '500px' }}>
+    <Card bg="primary" style={{ height: '500px' }}>
       <Card.Header>Overtime Markets on Base</Card.Header>
       <Card.Body>
         <Card.Title>
@@ -50,9 +50,12 @@ function BaseOverTimeMarketsItem() {
               <Card.Header>{data[0].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>
-                  Market: {data[0].name} -- {data[0].sport}
+                {data[0].name}
                 </Card.Title>
-                <Card.Text>Trade This Market and More on Overtime</Card.Text>
+                <Card.Text>
+                Take a {data[0].supportedTypes[0]} on {data[4].name} now! Only
+                  on OverTime Markets
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

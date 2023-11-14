@@ -36,8 +36,8 @@ function ArbitriumOverTimeMarketsItem() {
   if (error) return ErrorMessage()
 
   return (
-    <Card style={{ height: '500px' }}>
-      <Card.Header>Overtime Markets on Optimism</Card.Header>
+    <Card bg="info" style={{ height: '500px' }}>
+      <Card.Header>Overtime Markets on Arbitrium</Card.Header>
       <Card.Body>
         <Card.Title>
           <h2 style={{ textAlign: 'center', color: 'white' }}>
@@ -45,28 +45,7 @@ function ArbitriumOverTimeMarketsItem() {
           </h2>
         </Card.Title>
         <Row>
-          <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-              <Card.Header>{data[0].sport} Markets</Card.Header>
-              <Card.Body>
-                <Card.Title>{data[0].name} Markets </Card.Title>
-                <Card.Text>Trade This Market and More on Overtime</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
 
-          <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-              <Card.Header>{data[4].sport} Markets</Card.Header>
-              <Card.Body>
-                <Card.Title>{data[4].name}</Card.Title>
-                <Card.Text>
-                  Take a {data[4].supportedTypes[0]} on {data[4].name} now! Only
-                  on OverTime Markets
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
           <Col>
             <Card border="light" style={{ width: '18rem' }}>
               <Card.Header>{data[9].sport} Markets</Card.Header>

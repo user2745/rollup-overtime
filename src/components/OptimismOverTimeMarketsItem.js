@@ -36,7 +36,7 @@ function OptimismOverTimeMarketsItem() {
   if (error) return ErrorMessage()
 
   return (
-    <Card style={{ height: '500px' }}>
+    <Card bg="danger" style={{ height: '500px' }}>
       <Card.Header>Overtime Markets on Optimism</Card.Header>
       <Card.Body>
         <Card.Title>
@@ -47,12 +47,12 @@ function OptimismOverTimeMarketsItem() {
         <Row>
           <Col>
             <Card border="light" style={{ width: '18rem' }}>
-              <Card.Header>{data[9].id}</Card.Header>
+              <Card.Header>{data[11].sport} Markets</Card.Header>
               <Card.Body>
-                <Card.Title>{data[9].name}</Card.Title>
+                <Card.Title>{data[11].name}</Card.Title>
                 <Card.Text>
-                  Visit OverTime Markets to Take a {data[9].supportedTypes[0]}{' '}
-                  on {data[4].name}
+                Take a {data[11].supportedTypes[11]} on {data[4].name} now! Only
+                  on OverTime Markets
                 </Card.Text>
               </Card.Body>
             </Card>
