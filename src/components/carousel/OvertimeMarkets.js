@@ -8,7 +8,7 @@ import '../carousel/overTimeMarkets.css'
 
 function OvertimeMarkets() {
   return (
-    <Carousel className="carousel" data-bs-theme="dark">
+    <Carousel className="carousel">
       <Carousel.Item className="carousel-item">
         <BaseOverTimeMarketsItem />
         <Carousel.Caption>
@@ -16,8 +16,7 @@ function OvertimeMarkets() {
             <a href="https://base.org">Base</a> Overtime Markets
           </h3>
           <Button
-            className="carousel-button"
-            variant="outline-light"
+            variant="outline-dark"
             size="lg"
             href="http://overtimemarkets.xyz"
           >
@@ -32,8 +31,7 @@ function OvertimeMarkets() {
             <a href="http://optimism.io/">Optimism</a> Overtime Markets
           </h3>
           <Button
-            className="carousel-button"
-            variant="outline-light"
+            variant="outline-dark"
             size="lg"
             href="http://overtimemarkets.xyz"
           >
@@ -48,8 +46,7 @@ function OvertimeMarkets() {
             <a href="http://arbitrum.io">Arbitrium</a> Overtime Markets
           </h3>
           <Button
-            className="carousel-button"
-            variant="outline-light"
+            variant="outline-dark"
             size="lg"
             href="http://overtimemarkets.xyz"
           >
