@@ -40,14 +40,14 @@ function OptimismOverTimeMarketsItem() {
       <Card.Header>Overtime Markets on Optimism</Card.Header>
       <Card.Body>
         <Card.Title>
-          <h2 style={{ textAlign: 'center', color: 'white' }}>
+          <h2 style={{ textAlign: 'center', color: 'black' }}>
             Optimism Markets available now on Overtime
           </h2>
         </Card.Title>
         <Row>
           <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-              <Card.Header>{data[9].id}</Card.Header>
+            <Card style={{ width: '18rem' }}>
+              <Card.Header>{data[9].sport} Markets </Card.Header>
               <Card.Body>
                 <Card.Title>{data[9].name}</Card.Title>
                 <Card.Text>

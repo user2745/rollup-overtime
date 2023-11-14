@@ -40,13 +40,13 @@ function ArbitriumOverTimeMarketsItem() {
       <Card.Header>Overtime Markets on Arbitrium</Card.Header>
       <Card.Body>
         <Card.Title>
-          <h2 style={{ textAlign: 'center', color: 'white' }}>
+          <h2 style={{ textAlign: 'center', color: 'black' }}>
             These Markets are available now on Overtime
           </h2>
         </Card.Title>
         <Row>
           <Col>
-            <Card border="light" style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }}>
               <Card.Header>{data[0].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>{data[0].name} Markets </Card.Title>
@@ -54,9 +54,8 @@ function ArbitriumOverTimeMarketsItem() {
               </Card.Body>
             </Card>
           </Col>
-
           <Col>
-            <Card border="light" style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }}>
               <Card.Header>{data[4].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>{data[4].name}</Card.Title>
@@ -68,7 +67,7 @@ function ArbitriumOverTimeMarketsItem() {
             </Card>
           </Col>
           <Col>
-            <Card border="light" style={{ width: '18rem' }}>
+            <Card style={{ width: '18rem' }}>
               <Card.Header>{data[9].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>{data[9].name}</Card.Title>
