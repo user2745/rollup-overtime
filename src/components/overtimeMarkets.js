@@ -10,7 +10,7 @@ function OvertimeMarkets() {
       <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
         <BaseOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3>
+          <h3 style={{ color: 'black' }}>
             <a href="https://base.org">Base</a> Overtime Markets
           </h3>
           <Button
@@ -26,7 +26,7 @@ function OvertimeMarkets() {
       <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
         <OptimismOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3>
+          <h3 style={{ color: 'black' }}>
             <a href="http://optimism.io/">Optimism</a> Overtime Markets
           </h3>
           <Button
@@ -42,7 +42,7 @@ function OvertimeMarkets() {
       <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
         <ArbitriumOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3>
+          <h3 style={{ color: 'black' }}>
             <a href="http://arbitrum.io">Arbitrium</a> Overtime Markets
           </h3>
           <Button
