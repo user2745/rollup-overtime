@@ -33,44 +33,21 @@ function OptimismOverTimeMarketsItem() {
 
         if (loading)   return (
         <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
         </Spinner>
       );
    
 
     return (
-        <Card bg='dark'>
+        <Card style={{height: '500px'}}>
             <Card.Header>
                 Overtime Markets on Optimism
             </Card.Header>
             <Card.Body>
                 <Card.Title>
-                    <h2 style={{textAlign: "center"}}>These Markets are available now on Overtime</h2>
+                    <h2 style={{textAlign: "center", color: 'white'}}>Optimism Markets available now on Overtime</h2>
                 </Card.Title>
                 <Row>
-                      <Col>
-              <Card border="light" style={{ width: '18rem' }}>
-        <Card.Header>{data[0].id}</Card.Header>
-        <Card.Body>
-          <Card.Title>Market: {data[0].name} -- {data[0].sport}</Card.Title>
-          <Card.Text>
-          Trade This Market and More on Overtime
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      </Col>
 
-        <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-                <Card.Header>{data[4].id}</Card.Header>
-                <Card.Body>
-                <Card.Title>Market: {data[4].name} -- {data[4].sport}</Card.Title>
-                <Card.Text>
-                    Trade This Market and More on Overtime
-                </Card.Text>
-                </Card.Body>
-            </Card>
-        </Col>
         <Col>
             <Card border="light" style={{ width: '18rem' }}>
                 <Card.Header>{data[9].id}</Card.Header>

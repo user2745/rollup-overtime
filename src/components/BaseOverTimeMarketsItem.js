@@ -33,18 +33,17 @@ function BaseOverTimeMarketsItem() {
 
     if (loading)   return (
         <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
         </Spinner>
       );
 
     return (
-        <Card bg='dark'>
+        <Card  style={{height: '500px'}}>
             <Card.Header>
                 Overtime Markets on Base
             </Card.Header>
             <Card.Body>
                 <Card.Title>
-                    <h2 style={{textAlign: "center"}}>These Markets are available now on Overtime</h2>
+                    <h2 style={{textAlign: "center", color: 'white'}}>Base Markets available now on Overtime</h2>
                 </Card.Title>
                 <Row>
                       <Col>
@@ -59,27 +58,7 @@ function BaseOverTimeMarketsItem() {
       </Card>
       </Col>
 
-        <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-            <Card.Header>{data[4].sport} Markets</Card.Header>
-                <Card.Body>
-                <Card.Title>{data[4].name}</Card.Title>
-                <Card.Text>
-                Take a {data[4].supportedTypes[0]} on {data[4].name} now!  Only on OverTime Markets
-                </Card.Text>
-                </Card.Body>
-            </Card>
-        </Col>
-        <Col>
-            <Card border="light" style={{ width: '18rem' }}>
-            <Card.Header>{data[9].sport} Markets</Card.Header>
-               <Card.Body>
-                <Card.Title>{data[9].name}</Card.Title>
-                <Card.Text>
-                Take a {data[9].supportedTypes[9]} on {data[4].name} now!  Only on OverTime Markets                </Card.Text>
-                </Card.Body>
-            </Card>
-        </Col>
+
       </Row>
             </Card.Body>
         </Card>

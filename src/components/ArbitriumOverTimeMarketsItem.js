@@ -32,18 +32,17 @@ function ArbitriumOverTimeMarketsItem() {
 
     if (loading)   return (
         <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
         </Spinner>
       );
 
     return (
-        <Card bg='dark'>
+        <Card style={{height: '500px'}}>
             <Card.Header>
                 Overtime Markets on Optimism
             </Card.Header>
             <Card.Body>
                 <Card.Title>
-                    <h2 style={{textAlign: "center"}}>These Markets are available now on Overtime</h2>
+                    <h2 style={{textAlign: "center", color: 'white'}}>These Markets are available now on Overtime</h2>
                 </Card.Title>
                 <Row>
                       <Col>
