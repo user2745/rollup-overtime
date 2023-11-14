@@ -32,8 +32,8 @@ function OptimismOverTimeMarketsItem() {
       })
   }, [])
 
-  if (loading) return Loader
-  if (error) return ErrorMessage
+  if (loading) return Loader()
+  if (error) return ErrorMessage()
 
   return (
     <Card style={{ height: '500px' }}>
