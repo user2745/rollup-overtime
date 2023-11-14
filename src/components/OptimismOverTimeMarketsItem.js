@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import Spinner from 'react-bootstrap/Spinner'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Loader from './ui/Loader'
+import ErrorMessage from './ui/ErrorMessage'
 
 function OptimismOverTimeMarketsItem() {
   const [data, setData] = useState(null)
@@ -31,15 +32,8 @@ function OptimismOverTimeMarketsItem() {
       })
   }, [])
 
-  if (loading) return <Spinner animation="border" role="status"></Spinner>
-
-  if (error) {
-    return (
-      <div style={{ color: 'red', textAlign: 'center' }}>
-        Error: Failed to Load Markets
-      </div>
-    )
-  }
+  if (loading) return Loader
+  if (error) return ErrorMessage
 
   return (
     <Card style={{ height: '500px' }}>
