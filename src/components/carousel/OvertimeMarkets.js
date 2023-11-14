@@ -4,18 +4,19 @@ import OptimismOverTimeMarketsItem from '../OptimismOverTimeMarketsItem'
 import BaseOverTimeMarketsItem from '../BaseOverTimeMarketsItem'
 import Button from 'react-bootstrap/Button'
 import '../carousel/slider.css'
+import '../carousel/overTimeMarkets.css'
 
 function OvertimeMarkets() {
   return (
-    <Carousel data-bs-theme="dark" style={{ backgroundColor: '#f5f5f5' }}>
-      <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
+    <Carousel className="carousel" data-bs-theme="dark">
+      <Carousel.Item className="carousel-item">
         <BaseOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3 style={{ color: 'black' }}>
+          <h3>
             <a href="https://base.org">Base</a> Overtime Markets
           </h3>
           <Button
-            style={{ color: 'black' }}
+            className="carousel-button"
             variant="outline-light"
             size="lg"
             href="http://overtimemarkets.xyz"
@@ -24,14 +25,14 @@ function OvertimeMarkets() {
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
+      <Carousel.Item className="carousel-item">
         <OptimismOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3 style={{ color: 'black' }}>
+          <h3>
             <a href="http://optimism.io/">Optimism</a> Overtime Markets
           </h3>
           <Button
-            style={{ color: 'black' }}
+            className="carousel-button"
             variant="outline-light"
             size="lg"
             href="http://overtimemarkets.xyz"
@@ -40,14 +41,14 @@ function OvertimeMarkets() {
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item style={{ padding: '1rem', border: '1px solid #ccc' }}>
+      <Carousel.Item className="carousel-item">
         <ArbitriumOverTimeMarketsItem />
         <Carousel.Caption>
-          <h3 style={{ color: 'black' }}>
+          <h3>
             <a href="http://arbitrum.io">Arbitrium</a> Overtime Markets
           </h3>
           <Button
-            style={{ color: 'black' }}
+            className="carousel-button"
             variant="outline-light"
             size="lg"
             href="http://overtimemarkets.xyz"

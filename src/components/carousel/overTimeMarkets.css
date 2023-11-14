@@ -1,0 +1,16 @@
+.carousel-item {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+.carousel-caption h3 {
+  color: black;
+}
+
+.carousel-button {
+  color: black;
+}
+
+.carousel {
+  background-color: #f5f5f5;
+}
