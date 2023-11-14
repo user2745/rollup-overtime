@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import OvertimeMarkets from './components/overtimeMarkets';
 import Container from 'react-bootstrap/Container';
 
