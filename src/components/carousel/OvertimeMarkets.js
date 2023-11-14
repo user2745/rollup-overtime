@@ -1,8 +1,9 @@
 import Carousel from 'react-bootstrap/Carousel'
-import ArbitriumOverTimeMarketsItem from './ArbitriumOverTimeMarketsItem'
-import OptimismOverTimeMarketsItem from './OptimismOverTimeMarketsItem'
-import BaseOverTimeMarketsItem from './BaseOverTimeMarketsItem'
+import ArbitriumOverTimeMarketsItem from '../ArbitriumOverTimeMarketsItem'
+import OptimismOverTimeMarketsItem from '../OptimismOverTimeMarketsItem'
+import BaseOverTimeMarketsItem from '../BaseOverTimeMarketsItem'
 import Button from 'react-bootstrap/Button'
+import '../carousel/slider.css'
 
 function OvertimeMarkets() {
   return (

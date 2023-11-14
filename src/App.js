@@ -1,4 +1,4 @@
-import OvertimeMarkets from './components/OvertimeMarkets'
+import OvertimeMarkets from './components/carousel/OvertimeMarkets'
 import Container from 'react-bootstrap/Container'
 
 import './App.css'
