@@ -33,7 +33,7 @@ function OvertimeMarkets() {
           <h3>
             <a href="http://optimism.io/" className="link">
               Optimism
-            </a>{' '}
+            </a>{''}
             Overtime Markets
           </h3>
           <Button
@@ -51,7 +51,7 @@ function OvertimeMarkets() {
           <h3>
             <a href="http://arbitrum.io" className="link">
               Arbitrium
-            </a>{' '}
+            </a>{''}
             Overtime Markets
           </h3>
           <Button
