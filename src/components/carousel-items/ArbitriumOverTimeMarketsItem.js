@@ -2,15 +2,21 @@ import { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Loader from './ui/Loader'
-import ErrorMessage from './ui/ErrorMessage'
+import './overTimeMarketsItems.css'
+import Loader from '../ui/Loader'
+import ErrorMessage from '../ui/ErrorMessage'
 
-function BaseOverTimeMarketsItem() {
+function ArbitriumOverTimeMarketsItem() {
   const [data, setData] = useState(null)
+  const [selectedMarket, setSelectedMarket] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const url = 'https://api.thalesmarket.io/overtime/networks/42161/sports'
+
+  
   useEffect(() => {
-    fetch('https://api.thalesmarket.io/overtime/networks/8453/sports')
+    fetch('https://api.thalesmarket.io/overtime/networks/42161/sports')
       .then((response) => {
         if (response.ok) {
           return response.json()
@@ -30,28 +36,36 @@ function BaseOverTimeMarketsItem() {
       .finally(() => {
         setLoading(false)
       })
-  }, [])
+  })
+
+  const GetNewMarkets = () => {
+    var dataLength = data.length;
+    var min = Math.ceil(0);
+    var max = Math.floor(dataLength);
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive 
+    setSelectedMarket(randomNumber)
+  }
 
   if (loading) return Loader()
   if (error) return ErrorMessage()
 
   return (
-    <Card bg="primary" style={{ height: '500px' }}>
-      <Card.Header>Overtime Markets on Base</Card.Header>
+    <Card bg="info" style={{ height: '500px' }}>
+      <Card.Header>Overtime Markets on Arbitrium</Card.Header>
       <Card.Body>
         <Card.Title>
           <h2 style={{ textAlign: 'center', color: 'black' }}>
-            Base Markets available now on Overtime
+            These Markets are available now on Overtime
           </h2>
         </Card.Title>
         <Row>
           <Col>
-            <Card style={{ width: '18rem' }}>
-              <Card.Header>{data[0].sport} Markets</Card.Header>
+            <Card border="light" style={{ width: '18rem' }} className='inner-card'>
+              <Card.Header>{data[9].sport} Markets</Card.Header>
               <Card.Body>
-                <Card.Title>{data[0].name}</Card.Title>
+                <Card.Title>{data[9].name}</Card.Title>
                 <Card.Text>
-                  Take a {data[0].supportedTypes[0]} on {data[4].name} now! Only
+                  Take a {data[9].supportedTypes[9]} on {data[4].name} now! Only
                   on OverTime Markets
                 </Card.Text>
               </Card.Body>
@@ -63,4 +77,4 @@ function BaseOverTimeMarketsItem() {
   )
 }
 
-export default BaseOverTimeMarketsItem
+export default ArbitriumOverTimeMarketsItem

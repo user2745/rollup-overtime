@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Loader from './ui/Loader'
-import ErrorMessage from './ui/ErrorMessage'
+import './overTimeMarketsItems.css'
+import Loader from '../ui/Loader'
+import ErrorMessage from '../ui/ErrorMessage'
 
 function OptimismOverTimeMarketsItem() {
   const [data, setData] = useState(null)
+  const [selectedMarket, setSelectedMarket] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
@@ -32,6 +34,14 @@ function OptimismOverTimeMarketsItem() {
       })
   }, [])
 
+  const GetNewMarkets = () => {
+    var dataLength = data.length;
+    var min = Math.ceil(0);
+    var max = Math.floor(dataLength);
+    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive 
+    setSelectedMarket(randomNumber)
+  }
+
   if (loading) return Loader()
   if (error) return ErrorMessage()
 
@@ -44,9 +54,7 @@ function OptimismOverTimeMarketsItem() {
             Optimism Markets available now on Overtime
           </h2>
         </Card.Title>
-        <Row>
-          <Col>
-            <Card border="light" style={{ width: '18rem' }}>
+            <Card border="light" style={{ width: '18rem' }} className='inner-card'>
               <Card.Header>{data[11].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>{data[11].name}</Card.Title>
@@ -56,8 +64,6 @@ function OptimismOverTimeMarketsItem() {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-        </Row>
       </Card.Body>
     </Card>
   )

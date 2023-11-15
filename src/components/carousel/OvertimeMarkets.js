@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel'
-import ArbitriumOverTimeMarketsItem from '../ArbitriumOverTimeMarketsItem'
-import OptimismOverTimeMarketsItem from '../OptimismOverTimeMarketsItem'
-import BaseOverTimeMarketsItem from '../BaseOverTimeMarketsItem'
+import ArbitriumOverTimeMarketsItem from '../carousel-items/ArbitriumOverTimeMarketsItem'
+import OptimismOverTimeMarketsItem from '../carousel-items/OptimismOverTimeMarketsItem'
+import BaseOverTimeMarketsItem from '../carousel-items/BaseOverTimeMarketsItem'
 import Button from 'react-bootstrap/Button'
 import '../carousel/slider.css'
 import '../carousel/overTimeMarkets.css'
@@ -14,9 +14,9 @@ function OvertimeMarkets() {
         <Carousel.Caption>
           <h3>
             <a href="https://base.org" className="link">
-              Base
+              Base 
             </a>{' '}
-            Overtime Markets
+             Overtime Markets
           </h3>
           <Button
             variant="outline-dark"
@@ -32,7 +32,7 @@ function OvertimeMarkets() {
         <Carousel.Caption>
           <h3>
             <a href="http://optimism.io/" className="link">
-              Optimism
+              Optimism 
             </a>{''}
             Overtime Markets
           </h3>
@@ -50,9 +50,9 @@ function OvertimeMarkets() {
         <Carousel.Caption>
           <h3>
             <a href="http://arbitrum.io" className="link">
-              Arbitrium
+              Arbitrium 
             </a>{''}
-            Overtime Markets
+             Overtime Markets
           </h3>
           <Button
             variant="outline-dark"
