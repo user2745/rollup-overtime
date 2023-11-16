@@ -1,4 +1,4 @@
-function GenerateRandomIndex(marketsArray) {
+function generateRandomIndex(marketsArray) {
   var dataLength = marketsArray.length
   var min = 0
   var max = dataLength - 1
@@ -6,4 +6,4 @@ function GenerateRandomIndex(marketsArray) {
   return randomNumber
 }
 
-export default GenerateRandomIndex
+export default generateRandomIndex

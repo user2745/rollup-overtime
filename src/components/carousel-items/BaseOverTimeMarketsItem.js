@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Loader from '../ui/Loader'
 import './overTimeMarketsItems.css'
 import ErrorMessage from '../ui/ErrorMessage'
-import GenerateRandomIndex from '../scripts/GenerateRandomIndex'
+import generateRandomIndex from '../scripts/GenerateRandomIndex'
 import useFetch from '../scripts/useFetch'
 
 function BaseOverTimeMarketsItem() {
@@ -20,7 +20,7 @@ function BaseOverTimeMarketsItem() {
   }
 
   const handleShowAnotherMarket = () => {
-    const newSelectedMarket = GenerateRandomIndex(data)
+    const newSelectedMarket = generateRandomIndex(data)
     setSelectedMarketIndex(newSelectedMarket)
   }
 
