@@ -13,6 +13,10 @@ function ArbitriumOverTimeMarketsItem() {
   if (loading) return Loader()
   if (error) return ErrorMessage()
 
+  if (!data) {
+    return <p>Error: Data could not be fetched.</p>
+  }
+
   return (
     <Card bg="info" style={{ height: '500px' }}>
       <Card.Header>Overtime Markets on Arbitrium</Card.Header>

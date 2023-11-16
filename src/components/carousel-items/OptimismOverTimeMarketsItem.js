@@ -11,6 +11,10 @@ function OptimismOverTimeMarketsItem() {
   if (loading) return Loader()
   if (error) return ErrorMessage()
 
+  if (!data) {
+    return <p>Error: Data could not be fetched.</p>
+  }
+
   return (
     <Card bg="danger" style={{ height: '500px' }}>
       <Card.Header>Overtime Markets on Optimism</Card.Header>
