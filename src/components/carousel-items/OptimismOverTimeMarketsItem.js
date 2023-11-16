@@ -1,49 +1,19 @@
-import { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import './overTimeMarketsItems.css'
 import Loader from '../ui/Loader'
 import ErrorMessage from '../ui/ErrorMessage'
+import useFetch from '../scripts/useFetch'
 
 function OptimismOverTimeMarketsItem() {
-  const [data, setData] = useState(null)
-  const [selectedMarket, setSelectedMarket] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  useEffect(() => {
-    fetch('https://api.thalesmarket.io/overtime/networks/10/sports')
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        throw response
-      })
-      .then((data) => {
-        setData(data)
-      })
-      .catch((error) => {
-        console.error(
-          '[Console]  An error occurred fetching Optimism markets!',
-          error,
-        )
-        setError(error)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [])
-
-  const GetNewMarkets = () => {
-    var dataLength = data.length;
-    var min = Math.ceil(0);
-    var max = Math.floor(dataLength);
-    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive 
-    setSelectedMarket(randomNumber)
-  }
+  const url = 'https://api.thalesmarket.io/overtime/networks/10/sports'
+  const { data, loading, error } = useFetch(url)
 
   if (loading) return Loader()
   if (error) return ErrorMessage()
+
+  if (!data) {
+    return <p>Error: Data could not be fetched.</p>
+  }
 
   return (
     <Card bg="danger" style={{ height: '500px' }}>
@@ -54,16 +24,16 @@ function OptimismOverTimeMarketsItem() {
             Optimism Markets available now on Overtime
           </h2>
         </Card.Title>
-            <Card border="light" style={{ width: '18rem' }} className='inner-card'>
-              <Card.Header>{data[11].sport} Markets</Card.Header>
-              <Card.Body>
-                <Card.Title>{data[11].name}</Card.Title>
-                <Card.Text>
-                  Take a {data[11].supportedTypes[11]} on {data[4].name} now!
-                  Only on OverTime Markets
-                </Card.Text>
-              </Card.Body>
-            </Card>
+        <Card border="light" style={{ width: '18rem' }} className="inner-card">
+          <Card.Header>{data[11].sport} Markets</Card.Header>
+          <Card.Body>
+            <Card.Title>{data[11].name}</Card.Title>
+            <Card.Text>
+              Take a {data[11].supportedTypes[11]} on {data[4].name} now! Only
+              on OverTime Markets
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </Card.Body>
     </Card>
   )
