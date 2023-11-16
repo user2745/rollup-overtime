@@ -1,12 +1,22 @@
 import Card from 'react-bootstrap/Card'
 import './overTimeMarketsItems.css'
 import Loader from '../ui/Loader'
+import Button from 'react-bootstrap/Button'
+import { useState } from 'react'
+import generateRandomIndex from '../scripts/GenerateRandomIndex'
 import ErrorMessage from '../ui/ErrorMessage'
 import useFetch from '../scripts/useFetch'
 
 function OptimismOverTimeMarketsItem() {
   const url = 'https://api.thalesmarket.io/overtime/networks/10/sports'
   const { data, loading, error } = useFetch(url)
+  const [selectedMarketIndex, setSelectedMarketIndex] = useState(0)
+
+
+  const handleShowAnotherMarket = () => {
+    const newSelectedMarket = generateRandomIndex(data)
+    setSelectedMarketIndex(newSelectedMarket)
+  }
 
   if (loading) return Loader()
   if (error) return ErrorMessage()
@@ -14,6 +24,7 @@ function OptimismOverTimeMarketsItem() {
   if (!data) {
     return <p>Error: Data could not be fetched.</p>
   }
+
 
   return (
     <Card bg="danger" style={{ height: '500px' }}>
@@ -25,13 +36,17 @@ function OptimismOverTimeMarketsItem() {
           </h2>
         </Card.Title>
         <Card border="light" style={{ width: '18rem' }} className="inner-card">
-          <Card.Header>{data[11].sport} Markets</Card.Header>
+          <Card.Header>{data[selectedMarketIndex].sport} Markets</Card.Header>
           <Card.Body>
-            <Card.Title>{data[11].name}</Card.Title>
+            <Card.Title>{data[selectedMarketIndex].name}</Card.Title>
             <Card.Text>
-              Take a {data[11].supportedTypes[11]} on {data[4].name} now! Only
+              Take {data[selectedMarketIndex].supportedTypes[selectedMarketIndex]} on {data[selectedMarketIndex].name} now! Only
               on OverTime Markets
             </Card.Text>
+
+            <Button variant="primary" onClick={handleShowAnotherMarket}>
+            {loading ? 'Loading…' : 'Show me Another Market'}
+          </Button>
           </Card.Body>
         </Card>
       </Card.Body>

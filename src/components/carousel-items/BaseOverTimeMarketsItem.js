@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 import Loader from '../ui/Loader'
 import './overTimeMarketsItems.css'
@@ -30,15 +32,31 @@ function BaseOverTimeMarketsItem() {
       <Card.Body>
         <Card.Title>
           <h2 style={{ textAlign: 'center', color: 'black' }}>
-            Base Markets available now on Overtime
+            These Markets are available now on Overtime
           </h2>
         </Card.Title>
-        <Card className="inner-card">
-          {data[selectedMarketIndex].name}
-          <Button variant="primary" onClick={handleShowAnotherMarket}>
+        <Row>
+          <Col>
+            <Card
+              border="light"
+              style={{ width: '18rem' }}
+              className="inner-card"
+            >
+              <Card.Header>{data[9].sport} Markets</Card.Header>
+              <Card.Body>
+            <Card.Title>{data[selectedMarketIndex].name}</Card.Title>
+            <Card.Text>
+              Take {data[selectedMarketIndex].supportedTypes[selectedMarketIndex]} on {data[selectedMarketIndex].name} now! Only
+              on OverTime Markets
+            </Card.Text>
+
+            <Button variant="primary" onClick={handleShowAnotherMarket}>
             {loading ? 'Loading…' : 'Show me Another Market'}
           </Button>
-        </Card>
+          </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   )
