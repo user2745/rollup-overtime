@@ -1,50 +1,14 @@
-import { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './overTimeMarketsItems.css'
 import Loader from '../ui/Loader'
 import ErrorMessage from '../ui/ErrorMessage'
+import useFetch from '../scripts/useFetch'
 
 function ArbitriumOverTimeMarketsItem() {
-  const [data, setData] = useState(null)
-  const [selectedMarket, setSelectedMarket] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
   const url = 'https://api.thalesmarket.io/overtime/networks/42161/sports'
-
-  
-  useEffect(() => {
-    fetch('https://api.thalesmarket.io/overtime/networks/42161/sports')
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        throw response
-      })
-      .then((data) => {
-        setData(data)
-      })
-      .catch((error) => {
-        console.error(
-          '[Console]  An error occurred fetching Optimism markets!',
-          error,
-        )
-        setError(error)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  })
-
-  const GetNewMarkets = () => {
-    var dataLength = data.length;
-    var min = Math.ceil(0);
-    var max = Math.floor(dataLength);
-    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive 
-    setSelectedMarket(randomNumber)
-  }
+  const { data, loading, error } = useFetch(url)
 
   if (loading) return Loader()
   if (error) return ErrorMessage()
@@ -60,7 +24,11 @@ function ArbitriumOverTimeMarketsItem() {
         </Card.Title>
         <Row>
           <Col>
-            <Card border="light" style={{ width: '18rem' }} className='inner-card'>
+            <Card
+              border="light"
+              style={{ width: '18rem' }}
+              className="inner-card"
+            >
               <Card.Header>{data[9].sport} Markets</Card.Header>
               <Card.Body>
                 <Card.Title>{data[9].name}</Card.Title>
