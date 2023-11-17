@@ -3,6 +3,7 @@ import { Tab, Tabs } from 'react-bootstrap'
 import { chainIds } from '../scripts/SupportedChains'
 import ErrorMessage from '../ui/ErrorMessage'
 import Loader from '../ui/Loader'
+import MarketCard from '../market/MarketCard'
 
 const MarketListView = () => {
   const [activeTab, setActiveTab] = useState('base')
@@ -44,10 +45,7 @@ const MarketListView = () => {
         {markets && (
           <div className="market-list">
             {markets.map((market) => (
-              <div key={market.gameId}>
-                <h2>{market.homeTeam}</h2>
-                <p>{market.awayTeam}</p>
-              </div>
+              <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
         )}
@@ -56,10 +54,7 @@ const MarketListView = () => {
         {markets && (
           <div className="market-list">
             {markets.map((market) => (
-              <div key={market.gameId}>
-                <h2>{market.homeTeam}</h2>
-                <p>{market.awayTeam}</p>
-              </div>
+              <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
         )}
@@ -68,10 +63,7 @@ const MarketListView = () => {
         {markets && (
           <div className="market-list">
             {markets.map((market) => (
-              <div key={market.gameId}>
-                <h2>{market.homeTeam}</h2>
-                <p>{market.awayTeam}</p>
-              </div>
+              <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
         )}
