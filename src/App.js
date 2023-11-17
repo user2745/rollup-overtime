@@ -1,13 +1,16 @@
-import OvertimeMarkets from './components/carousel/OvertimeMarkets'
-import Container from 'react-bootstrap/Container'
+import Header from './components/header/Header'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import RoutesComponent from './components/routes/routes'
 
 function App() {
   return (
-    <Container className="p-3">
-      <OvertimeMarkets />
-    </Container>
+    <BrowserRouter>
+      <Header />
+      <RoutesComponent />
+    </BrowserRouter>
   )
 }
 
