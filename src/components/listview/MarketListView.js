@@ -1,36 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
 import { chainIds } from '../scripts/SupportedChains'
 import ErrorMessage from '../ui/ErrorMessage'
 import Loader from '../ui/Loader'
 import MarketCard from '../market/MarketCard'
+import useFetch from '../scripts/useFetch'
 
 const MarketListView = () => {
   const [activeTab, setActiveTab] = useState('base')
-  const [markets, setMarkets] = useState([])
   const [chain, setActiveChain] = useState(8453)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
   const url = `https://api.thalesmarket.io/overtime/networks/${chain}/markets?ungroup=true`
+  const { data, loading, error } = useFetch(url)
 
-  useEffect(() => {
-    setIsLoading(true)
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setMarkets(data)
-        setIsLoading(false)
-      })
-      .catch((err) => {
-        setError(err)
-        setIsLoading(false)
-      })
-  }, [url])
-
-  if (isLoading) return Loader()
+  if (loading) return Loader()
   if (error) return ErrorMessage()
 
-  if (!markets) {
+  if (!data) {
     return <p>Error: Data could not be fetched.</p>
   }
 
@@ -38,31 +23,34 @@ const MarketListView = () => {
     <Tabs
       id="market-tabs"
       activeKey={activeTab}
-      onSelect={(tab) => setActiveTab(tab)}
+      onSelect={(chainName) => {
+        setActiveTab(chainName)
+        setActiveChain(chainIds[chainName])
+      }}
       className="mb-3"
     >
       <Tab eventKey="base" title="Base">
-        {markets && (
+        {data && (
           <div className="market-list">
-            {markets.map((market) => (
+            {data.map((market) => (
               <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
         )}
       </Tab>
       <Tab eventKey="arbitrum" title="Arbitrium">
-        {markets && (
+        {data && (
           <div className="market-list">
-            {markets.map((market) => (
+            {data.map((market) => (
               <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
         )}
       </Tab>
       <Tab eventKey="optimism" title="Optimism">
-        {markets && (
+        {data && (
           <div className="market-list">
-            {markets.map((market) => (
+            {data.map((market) => (
               <MarketCard key={market.gameId} market={market} />
             ))}
           </div>
