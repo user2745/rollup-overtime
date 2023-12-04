@@ -3,12 +3,12 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import RoutesComponent from './components/routes/Routes'
+import RoutesComponent from './components/routes/routes.js'
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <RoutesComponent />
     </BrowserRouter>
   )

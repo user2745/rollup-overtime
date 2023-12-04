@@ -18,17 +18,11 @@ const MarketCard = ({ market }) => {
   return (
     <Card className="text-center">
       <CardHeader className="bg-dark text-white">
-        {market.homeTeam} vs. {market.awayTeam}
+        {market.homeTeam} vs. {market.awayTeam} - {market.maturityDate}
       </CardHeader>
       <CardBody>
         <CardTitle>Match Information</CardTitle>
         <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>Field</th>
-              <th>Value</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
               <td>Sport</td>

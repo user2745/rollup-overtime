@@ -6,8 +6,8 @@ import MarketListView from '../listview/MarketListView'
 const RoutesComponent = () => {
   return (
     <Routes>
-      <Route path="/" element={<OvertimeMarkets />} />
-      <Route path="/markets" element={<MarketListView />} />
+      <Route path="/" element={<MarketListView />} />
+      {/* <Route path="/markets" element={<MarketListView />} /> */}
     </Routes>
   )
 }
